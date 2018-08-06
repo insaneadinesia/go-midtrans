@@ -44,6 +44,9 @@ type Response struct {
 	VANumbers         []VANumber `json:"va_numbers"`
 	PaymentCode       string     `json:"payment_code"`
 	Actions           []Action   `json:"actions"`
+	ApprovalCode      string     `json:"approval_code"`
+	InstallmentTerm   string     `json:"installment_term"`
+	Currency          string     `json:"currency"`
 }
 
 // SnapResponse : Response after calling the Snap API
