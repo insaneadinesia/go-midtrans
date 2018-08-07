@@ -14,11 +14,11 @@ type ItemDetail struct {
 // CustAddress : Represent the customer address
 type CustAddress struct {
 	FName       string `json:"first_name"`
-	LName       string `json:"last_name"`
+	LName       string `json:"last_name,omitempty"`
 	Phone       string `json:"phone"`
-	Address     string `json:"address"`
-	City        string `json:"city"`
-	Postcode    string `json:"postal_code"`
+	Address     string `json:"address,omitempty"`
+	City        string `json:"city,omitempty"`
+	Postcode    string `json:"postal_code,omitempty"`
 	CountryCode string `json:"country_code"`
 }
 
@@ -28,7 +28,7 @@ type CustDetail struct {
 	FName string `json:"first_name"`
 
 	// last name
-	LName string `json:"last_name"`
+	LName string `json:"last_name,omitempty"`
 
 	Email    string       `json:"email"`
 	Phone    string       `json:"phone"`
@@ -158,6 +158,13 @@ type ConvStoreDetail struct {
 	Message string `json:"message"`
 }
 
+// CustomExpiry : Represent Set Custom Expiry Charge Feature
+type CustomExpiry struct {
+	OrderTime      string `json:"order_time"`
+	ExpiryDuration int16  `json:"expiry_duration"`
+	Unit           string `json:"unit"`
+}
+
 // ChargeReq : Represent Charge request payload
 type ChargeReq struct {
 	PaymentType        PaymentType        `json:"payment_type"`
@@ -175,6 +182,7 @@ type ChargeReq struct {
 	IndosatDompetku               *IndosatDompetkuDetail         `json:"indosat_dompetku,omitempty"`
 	CustomerDetail                *CustDetail                    `json:"customer_details,omitempty"`
 	ConvStore                     *ConvStoreDetail               `json:"cstore,omitempty"`
+	CustomExpiry                  *CustomExpiry                  `json:"custom_expiry,omitempty"`
 
 	Items      *[]ItemDetail `json:"item_details,omitempty"`
 	CustField1 string        `json:"custom_field1,omitempty"`
