@@ -47,6 +47,7 @@ type Response struct {
 	ApprovalCode      string     `json:"approval_code"`
 	InstallmentTerm   string     `json:"installment_term"`
 	Currency          string     `json:"currency"`
+	MaskedCard        string     `json:"masked_card"`
 }
 
 // SnapResponse : Response after calling the Snap API
