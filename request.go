@@ -158,6 +158,11 @@ type ConvStoreDetail struct {
 	Message string `json:"message"`
 }
 
+type GopayDetail struct {
+	EnableCallback bool   `json:"enable_callback"`
+	CallbackURL    string `json:"callback_url"`
+}
+
 // CustomExpiry : Represent Set Custom Expiry Charge Feature
 type CustomExpiry struct {
 	OrderTime      string `json:"order_time"`
@@ -182,6 +187,7 @@ type ChargeReq struct {
 	IndosatDompetku               *IndosatDompetkuDetail         `json:"indosat_dompetku,omitempty"`
 	CustomerDetail                *CustDetail                    `json:"customer_details,omitempty"`
 	ConvStore                     *ConvStoreDetail               `json:"cstore,omitempty"`
+	Gopay                         *GopayDetail                   `json:"gopay,omitempty"`
 	CustomExpiry                  *CustomExpiry                  `json:"custom_expiry,omitempty"`
 
 	Items      *[]ItemDetail `json:"item_details,omitempty"`
