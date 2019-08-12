@@ -154,8 +154,11 @@ type MandiriEcashDetail struct {
 
 // ConvStoreDetail : Represent cstore detail
 type ConvStoreDetail struct {
-	Store   string `json:"store"`
-	Message string `json:"message"`
+	Store             string `json:"store"`
+	Message           string `json:"message,omitempty"`
+	AlfamartFreeText1 string `json:"alfamart_free_text_1,omitempty"`
+	AlfamartFreeText2 string `json:"alfamart_free_text_2,omitempty"`
+	AlfamartFreeText3 string `json:"alfamart_free_text_3,omitempty"`
 }
 
 type GopayDetail struct {
