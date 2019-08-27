@@ -48,6 +48,7 @@ type Response struct {
 	InstallmentTerm   interface{} `json:"installment_term"`
 	Currency          string      `json:"currency"`
 	MaskedCard        string      `json:"masked_card"`
+	CardType          string      `json:"card_type"`
 }
 
 // SnapResponse : Response after calling the Snap API
